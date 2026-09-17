@@ -1,0 +1,556 @@
+{
+  "Potato Chips": {
+    "commodity": "Potato Chips",
+    "category": "Snacks",
+    "moisture_pct": 2.0,
+    "fat_pct": 34.5,
+    "protein_pct": 6.5,
+    "ph": 6.2,
+    "water_activity_aw": 0.2,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 180,
+    "primary_degradation_modes": [
+      "Oxidative rancidity of lipids",
+      "Moisture sorption leading to loss of crispness"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "High",
+      "moisture": "Ultra_High",
+      "light": "High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 50.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% N2 (or 99.5% N2, <0.5% O2) to prevent lipid photo-oxidation and pillow pack cushioning",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Milk Powder": {
+    "commodity": "Milk Powder",
+    "category": "Dairy",
+    "moisture_pct": 3.5,
+    "fat_pct": 26.5,
+    "protein_pct": 26.0,
+    "ph": 6.6,
+    "water_activity_aw": 0.22,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 365,
+    "primary_degradation_modes": [
+      "Caking due to lactose crystallization above aw 0.40",
+      "Lipid oxidation / off-flavors"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Ultra_High",
+      "moisture": "Ultra_High",
+      "light": "Ultra_High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 55.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% N2 or 80% N2 / 20% CO2 with residual O2 < 0.5%",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Tomato": {
+    "commodity": "Tomato",
+    "category": "Fresh Produce",
+    "moisture_pct": 94.5,
+    "fat_pct": 0.2,
+    "protein_pct": 0.9,
+    "ph": 4.3,
+    "water_activity_aw": 0.99,
+    "respiration_rate_class": "Moderate",
+    "respiration_rate_val": 18.5,
+    "standard_shelf_life_days": 14,
+    "primary_degradation_modes": [
+      "Transpiration water loss (shriveling)",
+      "Senescence / over-ripening",
+      "Fungal rots (Botrytis)",
+      "Chilling injury below 10\u00b0C"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Controlled_Permeability",
+      "moisture": "Moderate_Permeability",
+      "gas_exchange": "High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 12.0,
+    "optimal_rh_pct": 90.0,
+    "map_suitable": true,
+    "optimal_map_gas": "3-5% O2, 3-5% CO2, balance N2 (Prevents anaerobic fermentation while slowing respiration)",
+    "source_ref": "SRC_KADER_2002"
+  },
+  "Apple": {
+    "commodity": "Apple",
+    "category": "Fresh Produce",
+    "moisture_pct": 85.5,
+    "fat_pct": 0.2,
+    "protein_pct": 0.3,
+    "ph": 3.6,
+    "water_activity_aw": 0.98,
+    "respiration_rate_class": "Low_To_Moderate",
+    "respiration_rate_val": 8.0,
+    "standard_shelf_life_days": 60,
+    "primary_degradation_modes": [
+      "Ethylene-induced softening",
+      "Moisture loss",
+      "Internal breakdown"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Controlled_Permeability",
+      "moisture": "High",
+      "gas_exchange": "Moderate"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 2.0,
+    "optimal_rh_pct": 92.0,
+    "map_suitable": true,
+    "optimal_map_gas": "1-3% O2, 1-2% CO2, balance N2",
+    "source_ref": "SRC_KADER_2002"
+  },
+  "Biscuits": {
+    "commodity": "Biscuits",
+    "category": "Bakery",
+    "moisture_pct": 3.0,
+    "fat_pct": 18.0,
+    "protein_pct": 7.0,
+    "ph": 6.8,
+    "water_activity_aw": 0.25,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 180,
+    "primary_degradation_modes": [
+      "Moisture pickup (loss of crisp texture)",
+      "Fat rancidity"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Moderate",
+      "moisture": "Very_High",
+      "light": "Moderate"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 50.0,
+    "map_suitable": false,
+    "optimal_map_gas": "Air flush / light N2",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Fresh Chicken": {
+    "commodity": "Fresh Chicken",
+    "category": "Meat",
+    "moisture_pct": 74.0,
+    "fat_pct": 7.5,
+    "protein_pct": 22.0,
+    "ph": 5.9,
+    "water_activity_aw": 0.99,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 7,
+    "primary_degradation_modes": [
+      "Microbial spoilage (Pseudomonas, Brochothrix)",
+      "Lipid and myoglobin oxidation"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "High",
+      "moisture": "High",
+      "seal_integrity": "Ultra_High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 1.0,
+    "optimal_rh_pct": 85.0,
+    "map_suitable": true,
+    "optimal_map_gas": "70% O2 / 30% CO2 (for retail bloom) OR 70% N2 / 30% CO2 for extended anaerobic shelf life",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Frozen Peas": {
+    "commodity": "Frozen Peas",
+    "category": "Frozen Vegetable",
+    "moisture_pct": 79.0,
+    "fat_pct": 0.5,
+    "protein_pct": 5.4,
+    "ph": 6.5,
+    "water_activity_aw": 0.97,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 365,
+    "primary_degradation_modes": [
+      "Freezer burn (sublimation of ice crystals)",
+      "Cold-temperature film embrittlement"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Moderate",
+      "moisture": "High",
+      "subzero_flexibility": "Ultra_High"
+    },
+    "optimal_storage_type": "Frozen",
+    "optimal_temp_c": -18.0,
+    "optimal_rh_pct": 90.0,
+    "map_suitable": false,
+    "optimal_map_gas": "Standard cold pouch",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Coffee Powder": {
+    "commodity": "Coffee Powder",
+    "category": "Beverage",
+    "moisture_pct": 2.5,
+    "fat_pct": 14.0,
+    "protein_pct": 12.0,
+    "ph": 5.0,
+    "water_activity_aw": 0.2,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 270,
+    "primary_degradation_modes": [
+      "Loss of volatile aroma volatiles",
+      "Oxidation of coffee lipids",
+      "Moisture absorption causing stale aroma"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Ultra_High",
+      "moisture": "Ultra_High",
+      "aroma_retention": "Ultra_High",
+      "degassing_valve": "Required for freshly roasted beans"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 20.0,
+    "optimal_rh_pct": 50.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% N2 flush with residual O2 < 0.5%",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Ground Coffee": {
+    "commodity": "Ground Coffee",
+    "category": "Beverage",
+    "moisture_pct": 2.8,
+    "fat_pct": 13.5,
+    "protein_pct": 11.5,
+    "ph": 5.1,
+    "water_activity_aw": 0.22,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 270,
+    "primary_degradation_modes": [
+      "Extremely rapid aroma loss within 48h of grinding without high barrier",
+      "Lipid staling"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Ultra_High",
+      "moisture": "Ultra_High",
+      "aroma": "Ultra_High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 20.0,
+    "optimal_rh_pct": 50.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% N2 flush (or vacuum packed)",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Peanuts": {
+    "commodity": "Peanuts",
+    "category": "Nuts",
+    "moisture_pct": 5.0,
+    "fat_pct": 49.0,
+    "protein_pct": 26.0,
+    "ph": 6.5,
+    "water_activity_aw": 0.35,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 180,
+    "primary_degradation_modes": [
+      "Hexanal formation through lipid auto-oxidation",
+      "Loss of crunch",
+      "Potential aflatoxin risk if aw > 0.70"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "High",
+      "moisture": "High",
+      "oil_resistance": "High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 20.0,
+    "optimal_rh_pct": 55.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% N2 flush or vacuum packaging",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Cheese": {
+    "commodity": "Cheese",
+    "category": "Dairy",
+    "moisture_pct": 39.0,
+    "fat_pct": 32.0,
+    "protein_pct": 25.0,
+    "ph": 5.3,
+    "water_activity_aw": 0.95,
+    "respiration_rate_class": "Low",
+    "respiration_rate_val": 2.0,
+    "standard_shelf_life_days": 60,
+    "primary_degradation_modes": [
+      "Surface mold growth (Penicillium)",
+      "Lipid oxidation",
+      "Whey weeping / dehydration"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Ultra_High",
+      "moisture": "High",
+      "seal_integrity": "Ultra_High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 4.0,
+    "optimal_rh_pct": 80.0,
+    "map_suitable": true,
+    "optimal_map_gas": "30% CO2 / 70% N2 (Prevents mold without package collapse from CO2 absorption)",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Bread": {
+    "commodity": "Bread",
+    "category": "Bakery",
+    "moisture_pct": 36.0,
+    "fat_pct": 3.5,
+    "protein_pct": 9.0,
+    "ph": 5.5,
+    "water_activity_aw": 0.94,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 6,
+    "primary_degradation_modes": [
+      "Starch retrogradation (staling)",
+      "Mold growth (Rhizopus stolonifer)"
+    ],
+    "critical_barrier_needs": {
+      "moisture": "Moderate",
+      "breathability": "Slight (prevents condensation)",
+      "oxygen": "Low"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 65.0,
+    "map_suitable": true,
+    "optimal_map_gas": "100% CO2 or 60% CO2 / 40% N2 extends mold-free shelf life up to 21 days",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Mango": {
+    "commodity": "Mango",
+    "category": "Fresh Produce",
+    "moisture_pct": 83.5,
+    "fat_pct": 0.4,
+    "protein_pct": 0.8,
+    "ph": 4.5,
+    "water_activity_aw": 0.98,
+    "respiration_rate_class": "High",
+    "respiration_rate_val": 28.0,
+    "standard_shelf_life_days": 18,
+    "primary_degradation_modes": [
+      "Anthracnose rot",
+      "Chilling injury below 12\u00b0C",
+      "Rapid softening / over-ripening"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "Controlled_Permeability",
+      "moisture": "Moderate",
+      "gas_exchange": "High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 13.0,
+    "optimal_rh_pct": 90.0,
+    "map_suitable": true,
+    "optimal_map_gas": "3-5% O2, 5-8% CO2, balance N2",
+    "source_ref": "SRC_KADER_2002"
+  },
+  "Carrot": {
+    "commodity": "Carrot",
+    "category": "Fresh Produce",
+    "moisture_pct": 88.0,
+    "fat_pct": 0.2,
+    "protein_pct": 0.9,
+    "ph": 6.0,
+    "water_activity_aw": 0.99,
+    "respiration_rate_class": "Moderate",
+    "respiration_rate_val": 15.0,
+    "standard_shelf_life_days": 28,
+    "primary_degradation_modes": [
+      "White blush (surface dehydration)",
+      "Lignification",
+      "Bacterial soft rot"
+    ],
+    "critical_barrier_needs": {
+      "moisture": "High",
+      "oxygen": "Controlled_Permeability",
+      "micro_perforation": "Recommended"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 2.0,
+    "optimal_rh_pct": 95.0,
+    "map_suitable": true,
+    "optimal_map_gas": "3-5% O2, 2-5% CO2",
+    "source_ref": "SRC_KADER_2002"
+  },
+  "Onion": {
+    "commodity": "Onion",
+    "category": "Vegetable",
+    "moisture_pct": 89.0,
+    "fat_pct": 0.1,
+    "protein_pct": 1.1,
+    "ph": 5.8,
+    "water_activity_aw": 0.97,
+    "respiration_rate_class": "Low",
+    "respiration_rate_val": 5.0,
+    "standard_shelf_life_days": 90,
+    "primary_degradation_modes": [
+      "Sprouting",
+      "Root growth",
+      "Neck rot (Botrytis allii)",
+      "Condensation rot"
+    ],
+    "critical_barrier_needs": {
+      "ventilation": "Ultra_High",
+      "moisture": "Must allow moisture release",
+      "mesh_breathable": "Required"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 20.0,
+    "optimal_rh_pct": 65.0,
+    "map_suitable": false,
+    "optimal_map_gas": "Ambient ventilated atmosphere (hermetic sealed film causes rot)",
+    "source_ref": "SRC_KADER_2002"
+  },
+  "Rice": {
+    "commodity": "Rice",
+    "category": "Grain",
+    "moisture_pct": 13.0,
+    "fat_pct": 0.7,
+    "protein_pct": 7.1,
+    "ph": 6.5,
+    "water_activity_aw": 0.6,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 365,
+    "primary_degradation_modes": [
+      "Weevil insect infestation (Sitophilus oryzae)",
+      "Moisture absorption causing mold"
+    ],
+    "critical_barrier_needs": {
+      "puncture_resistance": "High",
+      "moisture": "Moderate_To_High",
+      "insect_barrier": "High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 60.0,
+    "map_suitable": true,
+    "optimal_map_gas": "CO2 fumigation / vacuum pack for long-term grain storage",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Wheat Flour": {
+    "commodity": "Wheat Flour",
+    "category": "Grain",
+    "moisture_pct": 12.5,
+    "fat_pct": 1.2,
+    "protein_pct": 10.5,
+    "ph": 6.3,
+    "water_activity_aw": 0.58,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 180,
+    "primary_degradation_modes": [
+      "Caking / lump formation",
+      "Tribolium beetle infestation",
+      "Lipid rancidity over time"
+    ],
+    "critical_barrier_needs": {
+      "moisture": "High",
+      "puncture_resistance": "Moderate_To_High"
+    },
+    "optimal_storage_type": "Ambient",
+    "optimal_temp_c": 22.0,
+    "optimal_rh_pct": 55.0,
+    "map_suitable": false,
+    "optimal_map_gas": "Standard dry sealed pouch or woven poly with liner",
+    "source_ref": "SRC_USDA_2024"
+  },
+  "Butter": {
+    "commodity": "Butter",
+    "category": "Dairy",
+    "moisture_pct": 16.0,
+    "fat_pct": 81.0,
+    "protein_pct": 0.9,
+    "ph": 6.4,
+    "water_activity_aw": 0.9,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 90,
+    "primary_degradation_modes": [
+      "Photo-oxidation triggered by fluorescent retail lighting",
+      "Surface oxidation",
+      "Aroma cross-contamination"
+    ],
+    "critical_barrier_needs": {
+      "light": "Total_Opaque",
+      "oxygen": "Ultra_High",
+      "oil_grease_resistance": "Ultra_High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 4.0,
+    "optimal_rh_pct": 75.0,
+    "map_suitable": false,
+    "optimal_map_gas": "Foil wrap / parchment laminate wrap",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Yogurt": {
+    "commodity": "Yogurt",
+    "category": "Dairy",
+    "moisture_pct": 85.0,
+    "fat_pct": 3.3,
+    "protein_pct": 3.5,
+    "ph": 4.2,
+    "water_activity_aw": 0.98,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 30,
+    "primary_degradation_modes": [
+      "Post-acidification by starter cultures",
+      "Yeast and mold contamination",
+      "Syneresis (whey separation)"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "High",
+      "sealability": "Ultra_High",
+      "moisture": "High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 4.0,
+    "optimal_rh_pct": 80.0,
+    "map_suitable": true,
+    "optimal_map_gas": "Top-headspace flush with 100% N2 or N2/CO2 to inhibit surface mold",
+    "source_ref": "SRC_ROBERTSON_2016"
+  },
+  "Fish": {
+    "commodity": "Fish",
+    "category": "Seafood",
+    "moisture_pct": 76.0,
+    "fat_pct": 5.0,
+    "protein_pct": 20.0,
+    "ph": 6.6,
+    "water_activity_aw": 0.99,
+    "respiration_rate_class": "None",
+    "respiration_rate_val": 0.0,
+    "standard_shelf_life_days": 5,
+    "primary_degradation_modes": [
+      "Trimethlyamine (TMA) enzymatic & bacterial generation",
+      "Histamine formation",
+      "Psychrotrophic spoilage"
+    ],
+    "critical_barrier_needs": {
+      "oxygen": "High_To_Controlled",
+      "seal_integrity": "Ultra_High",
+      "drip_containment": "High"
+    },
+    "optimal_storage_type": "Chilled",
+    "optimal_temp_c": 0.5,
+    "optimal_rh_pct": 90.0,
+    "map_suitable": true,
+    "optimal_map_gas": "High CO2 (40-60%) with 40% N2 (for oily fish) or 30% O2 / 40% CO2 / 30% N2 (for lean fish to prevent Clostridium botulinum type E anaerobiosis)",
+    "source_ref": "SRC_ROBERTSON_2016"
+  }
+}

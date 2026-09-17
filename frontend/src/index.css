@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #060a13;
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Background Atmosphere: Deep Space with Radiant Ambient Glows */
+.bg-ambient-canvas {
+  background-color: #060a13;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(255, 217, 5, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 25%, rgba(255, 100, 213, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 15% 45%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Ultra-Clean Subtle Dot Grid for Depth */
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Luxury Glassmorphism Cards */
+.glass-luxury {
+  background: rgba(13, 19, 36, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-luxury-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-luxury-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 217, 5, 0.4);
+  box-shadow: 0 25px 60px -10px rgba(255, 217, 5, 0.15), 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Clean Accent Cards */
+.glass-card-yellow {
+  background: linear-gradient(145deg, rgba(255, 217, 5, 0.08) 0%, rgba(13, 19, 36, 0.7) 100%);
+  border: 1px solid rgba(255, 217, 5, 0.3);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-yellow:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 217, 5, 0.6);
+  box-shadow: 0 20px 50px -10px rgba(255, 217, 5, 0.25);
+}
+
+.glass-card-pink {
+  background: linear-gradient(145deg, rgba(255, 100, 213, 0.08) 0%, rgba(13, 19, 36, 0.7) 100%);
+  border: 1px solid rgba(255, 100, 213, 0.3);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-pink:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 100, 213, 0.6);
+  box-shadow: 0 20px 50px -10px rgba(255, 100, 213, 0.25);
+}
+
+.glass-card-cyan {
+  background: linear-gradient(145deg, rgba(6, 182, 212, 0.08) 0%, rgba(13, 19, 36, 0.7) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-cyan:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 20px 50px -10px rgba(6, 182, 212, 0.25);
+}
+
+.glass-card-emerald {
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(13, 19, 36, 0.7) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-emerald:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 20px 50px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Masterpiece Tactile 3D Buttons (Sleek, Clean, Modern) */
+.btn-luxury-yellow {
+  background: linear-gradient(135deg, #ffd905 0%, #f5b700 100%);
+  color: #090e1a;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(255, 217, 5, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-luxury-yellow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px -4px rgba(255, 217, 5, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.btn-luxury-yellow:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px -2px rgba(255, 217, 5, 0.4);
+}
+
+.btn-luxury-pink {
+  background: linear-gradient(135deg, #ff64d5 0%, #d946ef 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(255, 100, 213, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-luxury-pink:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px -4px rgba(255, 100, 213, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.btn-luxury-pink:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px -2px rgba(255, 100, 213, 0.4);
+}
+
+.btn-luxury-glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  color: #f1f5f9;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-luxury-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.btn-luxury-glass:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Elegant Pill Tags */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.tag-pill-yellow {
+  background: rgba(255, 217, 5, 0.15);
+  color: #ffd905;
+  border: 1px solid rgba(255, 217, 5, 0.4);
+  box-shadow: 0 0 15px rgba(255, 217, 5, 0.15);
+}
+
+.tag-pill-pink {
+  background: rgba(255, 100, 213, 0.15);
+  color: #ff64d5;
+  border: 1px solid rgba(255, 100, 213, 0.4);
+  box-shadow: 0 0 15px rgba(255, 100, 213, 0.15);
+}
+
+.tag-pill-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.tag-pill-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+/* Smooth Floating & Levitation Keyframes */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Smooth Infinite Marquee */
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  width: max-content;
+  animation: marquee-smooth 32s linear infinite;
+}
+
+.animate-marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth Entrance */
+@keyframes fadeInUpSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUpSmooth 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd905;
+}

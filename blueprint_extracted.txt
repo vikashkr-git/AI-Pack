@@ -1,0 +1,849 @@
+=== PAGE 1 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 1
+ SMART INDIA HACKATHON 2026
+ Al-Based Intelligent Food Packaging Material Recommendation System for Food Commodities
+ Complete Problem Understanding & Project Blueprint
+Purpose of this document
+This document explains the selected SIH problem statement from the very beginning, assuming little prior knowledge
+of food packaging. It first explains the problem in paragraph form and then converts the idea into clear points: who
+faces the problem, what the user enters, what the system does, what the system outputs, what data and AI are
+required, how the application can be built, what the MVP should contain, and what risks the team must handle.
+Important: The application should be treated as an intelligent decision-support system. It should not
+claim to replace laboratory shelf-life testing, food-safety validation, packaging compatibility testing, or
+regulatory approval.
+
+=== PAGE 2 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 2
+1. Complete Problem Statement Explanation
+Food packaging is not simply a cover around food. Its main purpose is to protect the food from environmental
+conditions that can reduce quality, safety, and shelf life. Different foods behave differently because their moisture, fat,
+acidity, respiration, texture, and sensitivity to oxygen or water vapour are different. A packaging material that works
+well for one commodity may perform poorly for another. For example, a dry, fat-rich snack may need strong oxygen
+and moisture protection, while a fresh fruit or vegetable may still respire after harvesting and therefore needs
+controlled gas exchange rather than a completely airtight package.
+At present, packaging selection often depends heavily on expert knowledge, technical documents, laboratory testing,
+and manual comparison of material properties. This can be difficult for small food industries, startups, farmers, local
+manufacturers, and other users who may not have access to packaging specialists. They may know their food and
+storage conditions but may not know which packaging structure is suitable, what oxygen transmission rate (OTR) or
+water vapor transmission rate (WVTR) is required, what film thickness should be considered, or whether modified
+atmosphere packaging (MAP) is appropriate.
+The proposed SIH solution is therefore an intelligent software application that accepts information about a food
+commodity and its storage environment, analyzes those requirements using a packaging-material knowledge base
+and an AI-assisted recommendation engine, and produces suitable packaging options with relevant specifications.
+The system should not merely map a food name to a packaging material. A stronger solution first determines what the
+food needs—for example, strong oxygen protection, strong moisture protection, controlled gas exchange, mechanical
+strength, or suitable sealing—and then ranks packaging materials or structures that satisfy those requirements.
+For fresh fruits and vegetables, the system must additionally consider respiration rate. Fresh produce consumes
+oxygen and releases carbon dioxide after harvesting. Therefore, packaging that is too restrictive or too permeable
+may both cause quality problems. The recommendation should consequently consider controlled permeability,
+breathable or micro-perforated packaging, and MAP where appropriate. The final system can later be extended with
+shelf-life prediction, sustainability analysis, cost optimization, QR-based traceability, and eco-friendly alternatives, but
+these should not distract from the core recommendation problem.
+In simple terms, the project is a smart packaging advisor.
+It should answer a practical question:
+“Given this food, these storage conditions, and this required shelf life, what packaging solution is
+technically suitable, and why?”
+2. Who Is Facing This Problem?
+The problem is especially relevant to users who need packaging decisions but may not have access to a dedicated
+food-packaging expert. The system can support different levels of users: a small manufacturer may need a detailed
+technical recommendation, while a farmer or local producer may need a simpler recommendation. Researchers and
+packaging professionals can use the same platform for comparison and preliminary screening. An administrator is
+required to maintain the scientific packaging database and its sources.
+ Small food industries: Need practical packaging choices without maintaining a large technical team.
+ 
+ Food startups: Need an initial packaging direction while developing and scaling a product.
+ 
+ Farmers / FPOs / local producers: Particularly useful for fresh produce and post-harvest packaging decisions.
+ 
+ Researchers: Can compare packaging materials and their measured properties.
+ 
+ Packaging professionals: Can use the system for preliminary screening and comparison.
+ 
+ Administrators: Maintain material data, scientific sources, rules, and system content.
+ 
+3. What Will the User Enter?
+
+=== PAGE 3 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 3
+The user provides information that describes both the food and the environment in which the package will operate.
+These inputs are important because packaging requirements are determined by the interaction between the product
+and its environment. For the MVP, the interface should keep the form simple while allowing advanced users to enter
+more technical values.
+Category
+User Input
+Why It Matters
+Food
+Commodity type
+Identifies the food/product category and relevant packaging concerns.
+Food
+Moisture content
+Helps assess moisture sensitivity and WVTR requirements.
+Food
+Oil / fat content
+Helps assess oxidation sensitivity and oxygen-barrier needs.
+Food
+pH
+Provides information about product characteristics and potential stability concerns.
+Fresh produce
+Respiration rate
+Helps determine controlled gas exchange and breathable/micro-perforated needs.
+Requirement
+Desired shelf life
+Longer shelf life may require stronger or more controlled protection.
+Storage
+Temperature
+Packaging performance and food behaviour can change with temperature.
+Storage
+Relative humidity (RH)
+Important for moisture transfer and interpreting barrier data.
+Logistics
+Transportation conditions
+Helps account for physical and environmental stresses.
+Storage
+Ambient / Chilled / Frozen
+Defines the broad operating environment for the package.
+4. What Will the User Get as Output?
+The output should be more useful than a single material name. The system should provide a ranked
+recommendation, the packaging properties that make the option suitable, alternatives, and a clear explanation. If the
+data is insufficient, the system should be able to say so instead of creating false confidence.
+ Primary packaging recommendation: The most suitable material or packaging structure identified by the
+ system.
+ Alternative options: Other technically suitable choices for comparison.
+ 
+ OTR requirement: Oxygen Transmission Rate target/range where supported by validated data.
+ 
+ WVTR requirement: Water Vapor Transmission Rate target/range where supported.
+ 
+ Film thickness: Suitable range or candidate thickness based on available evidence.
+ 
+ Sealability: Whether the material/structure is appropriate for the required sealing process.
+ 
+ Gas permeability: Relevant O■/CO■ or other permeability information where applicable.
+ 
+ Mechanical strength: Relevant strength/handling requirement or property.
+ 
+ MAP suitability: Whether MAP is appropriate and, where scientifically supported, the relevant gas-composition
+ recommendation.
+ Reason / explanation: A human-readable explanation linking food properties and storage conditions to the
+ recommendation.
+ Confidence / evidence level: Recommended as a transparency feature, especially when data is limited or
+ conflicting.
+5. How the System Will Think
+The most important design decision is that the application should not behave like a simple lookup table. A robust
+approach is to first convert the user's food and environmental information into packaging requirements. The system
+can then compare those requirements with the properties of available packaging materials and structures. A rules
+layer provides scientifically understandable constraints, while an ML model can be used to rank or learn patterns from
+
+=== PAGE 4 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 4
+validated historical/material data. This hybrid approach is more defensible than using a black-box model alone.
+Food properties + Storage conditions → Packaging requirements → Candidate materials → AI/ML
+ranking → Top recommendations → Specifications + Explanation
+Example: Potato Chips
+ High fat can increase the importance of oxidation control.
+ 
+ A long desired shelf life increases the need for effective protection.
+ 
+ Low-moisture snacks can lose crispness when exposed to moisture.
+ 
+ The system therefore gives greater importance to oxygen and moisture barrier performance.
+ 
+ High-barrier/metallized or other suitable laminate structures may become candidates, subject to verified material
+ data.
+Example: Fresh Tomato
+ Fresh tomato continues to respire after harvesting.
+ 
+ Completely restricting gas exchange can be unsuitable.
+ 
+ The system should therefore consider controlled permeability and appropriate breathable/micro-perforated
+ structures.
+ MAP, if recommended, must be based on food-specific evidence rather than a universal gas mixture.
+ 
+6. Important Technical Terms You Must Understand
+OTR — Oxygen Transmission Rate — The rate at which oxygen passes through a packaging material. It is
+important for foods where oxygen exposure can contribute to oxidation or quality loss.
+WVTR — Water Vapor Transmission Rate — The rate at which water vapour passes through a packaging material.
+It is important for moisture-sensitive products such as crispy or dry foods.
+Gas permeability — Describes how readily gases such as oxygen or carbon dioxide can pass through a material. It
+becomes especially important for fresh produce and MAP.
+MAP — Modified Atmosphere Packaging — Packaging in which the gas atmosphere inside the package is
+intentionally modified or controlled. Common gases include oxygen, carbon dioxide, and nitrogen, but the correct
+composition depends on the food and conditions.
+Respiration rate — For fresh produce, the rate at which the commodity consumes oxygen and produces carbon
+dioxide after harvest. It affects how much gas exchange the package needs.
+Barrier property — A packaging material's ability to slow the movement of substances such as oxygen, water
+vapour, or light.
+Sealability — How reliably the package can be sealed and maintain its seal during storage and handling.
+Mechanical strength — The ability of the packaging structure to tolerate handling, transport, stacking, puncture,
+tensile, or other physical stresses.
+7. Requirements: Must Have, Should Have, Nice to Have
+A. MUST HAVE
+ Food and storage input form.
+ 
+ Packaging material/structure knowledge database.
+ 
+=== PAGE 5 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 5
+ Scientific property fields such as OTR, WVTR, thickness, permeability, sealability and mechanical properties
+ where data exists.
+ Recommendation engine that ranks suitable options.
+ 
+ Clear recommendation explanation.
+ 
+ Fresh-produce respiration handling where the user provides respiration-related information.
+ 
+ Data-source/provenance tracking for important scientific values.
+ 
+ Basic validation and handling of missing or invalid inputs.
+ 
+B. SHOULD HAVE
+ Top 3 recommendations rather than only one.
+ 
+ Cost-aware recommendation.
+ 
+ Sustainability comparison.
+ 
+ MAP suitability and gas recommendation where evidence supports it.
+ 
+ Confidence/evidence indicator.
+ 
+ Downloadable recommendation report.
+ 
+C. NICE TO HAVE
+ Shelf-life prediction.
+ 
+ Multilayer packaging structure designer.
+ 
+ QR-based traceability.
+ 
+ Supplier/material catalogue integration.
+ 
+ Advanced analytics and admin dashboards.
+ 
+ Industry/laboratory feedback loop.
+ 
+8. Data We Need
+The largest technical challenge in this project is not the web interface; it is building a reliable, structured, and legally
+reusable scientific knowledge base. A useful packaging dataset needs more than a material name. Material property
+values should ideally be stored together with their unit, thickness, temperature, relative humidity, test method, and
+source. This prevents the system from incorrectly comparing values measured under incompatible conditions.
+Important data groups:
+ Food-property data: moisture, fat/oil, pH, respiration rate, food category and related sensitivity information.
+ 
+ Packaging-property data: OTR, WVTR, O■/CO■ permeability, thickness, mechanical properties, sealing
+ information and MAP suitability.
+ Environmental/test conditions: temperature, RH, pressure/test method and other relevant measurement
+ metadata.
+ Outcome data: packaging-food combinations and observed/predicted shelf-life outcomes where scientifically valid
+ data is available.
+ Source/provenance data: paper/dataset, DOI or official source, license, date and confidence.
+ 
+Relevant starting sources
+ TRANSMAT Gold Standard: a research dataset dedicated to food-packaging permeability and composition,
+ containing information extracted from scientific literature about packaging composition and O■/CO■/H■O
+
+=== PAGE 6 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 6
+permeability and related measurement metadata.
+ Recent permeability research such as the 2026 npj Science of Food study can help understand how packaging
+ permeability data can be standardized and clustered, but its dataset should not be treated as a complete industrial
+recommendation database.
+ Official standards, manufacturer technical datasheets, and peer-reviewed literature can supplement the dataset
+ where reuse and licensing are appropriate.
+Research links used for this blueprint
+TRANSMAT article: https://pmc.ncbi.nlm.nih.gov/articles/PMC8144675/
+CIRAD Dataverse dataset DOI: 10.18167/DVN1/U7HK8J
+2026 npj Science of Food study: https://www.nature.com/articles/s41538-026-00741-7
+9. AI / ML Strategy
+AI/ML is useful because the system ultimately needs to rank packaging options using several interacting factors.
+However, deep learning should not be used merely to make the project sound advanced. The core problem is
+structured scientific/tabular data, so interpretable machine-learning models can be more appropriate, especially when
+the available dataset is not extremely large.
+Recommended approach: Hybrid Recommendation Engine
+ Layer 1 — Scientific rules: Convert food/storage conditions into required packaging characteristics.
+ 
+ Layer 2 — Material database: Retrieve candidate materials/structures with known properties.
+ 
+ Layer 3 — ML ranking: Rank candidates using validated data.
+ 
+ Layer 4 — Explainability: Show which requirements drove the recommendation.
+ 
+Start with a rule-based baseline first. Then test Random Forest, Gradient Boosting, XGBoost or another suitable
+model only if the dataset supports it. The ML model must be compared against the baseline instead of assuming ML
+is automatically better.
+Possible evaluation
+ Classification: Accuracy, Precision, Recall, F1 where appropriate.
+ 
+ Regression: MAE, RMSE, R² for numerical prediction tasks.
+ 
+ Recommendation: Top-1/Top-3 agreement, ranking quality, constraint satisfaction, and expert/validated reference
+ agreement.
+ System-level validation: whether the recommended properties actually satisfy the required packaging constraints.
+ 
+10. System Architecture
+Simple MVP architecture
+React Frontend → FastAPI Backend → Recommendation Engine → PostgreSQL Packaging Database →
+ML Model
+ Frontend: Collects inputs and displays recommendations.
+ 
+ Backend: Validates requests, runs business logic, connects the UI with data and model services.
+ 
+ Recommendation engine: Converts food/storage information into requirements and ranks candidates.
+ 
+ Database: Stores food profiles, packaging properties, sources, users and saved recommendations.
+ 
+ ML service/model: Performs ranking or prediction where validated training data is available.
+ 
+=== PAGE 7 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 7
+Production-level architecture can later add API gateway, caching, model versioning, monitoring, backups, audit logs,
+object storage and scalable compute. These are not required for the first SIH MVP.
+11. Complete User Flow
+ 1. User opens the web application.
+ 
+ 2. User selects or enters the food commodity.
+ 
+ 3. User enters moisture, fat/oil, pH and respiration rate where applicable.
+ 
+ 4. User enters desired shelf life and storage conditions.
+ 
+ 5. Frontend validates the values and highlights missing/invalid fields.
+ 
+ 6. Backend receives the request.
+ 
+ 7. Requirement engine determines the required barrier and packaging characteristics.
+ 
+ 8. Database provides suitable candidate materials/structures.
+ 
+ 9. ML/ranking engine scores and ranks the candidates.
+ 
+ 10. System returns the best option plus alternatives.
+ 
+ 11. User sees OTR, WVTR, thickness, permeability, sealing, mechanical and MAP information where available.
+ 
+ 12. System explains why each recommendation was selected.
+ 
+ 13. Recommendation can be saved or exported.
+ 
+ 14. Admin can update packaging data and scientific sources.
+ 
+12. Database Design
+Recommended database: PostgreSQL
+The data is structured and relational, so PostgreSQL is a strong choice. The system should maintain a clear
+relationship between a material property and the scientific source from which that value came.
+ Users: account and role information.
+ 
+ Food_Profiles: food/commodity properties.
+ 
+ Storage_Conditions: temperature, RH, storage type and transport conditions.
+ 
+ Packaging_Materials: material or structure information.
+ 
+ Packaging_Properties: OTR, WVTR, thickness, permeability, mechanical and sealing properties.
+ 
+ Sources: paper, dataset, DOI, license and provenance.
+ 
+ Recommendations: user request and generated results.
+ 
+ Recommendation_Items: ranked candidate materials and scores.
+ 
+13. API Requirements
+This project does not require many external APIs. In fact, reducing external dependencies is beneficial for an SIH
+prototype. The most important API is our own backend API that connects the frontend to the recommendation engine
+and database.
+API / Service
+Need
+Data / Function
+MVP Status
+Our FastAPI Recommendation API
+Frontend-backend communication
+User inputs → recommendation result
+Required
+Database access
+Store/retrieve data
+Food, packaging, sources, recommendations
+Required
+
+=== PAGE 8 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 8
+API / Service
+Need
+Data / Function
+MVP Status
+Authentication
+User/admin login
+Accounts and roles
+Optional for demo
+External scientific-data API
+Data acquisition
+Research/material data if an API exists
+Not required
+LLM API
+Natural-language explanation
+Text generation
+Not required
+Maps, GPS, satellite APIs, payment APIs and SMS APIs are not inherently required by the given problem statement.
+They should not be added merely for visual appeal.
+14. Security, Legal and Privacy
+ Authentication: Use secure login only if accounts are needed.
+ 
+ Authorization: Admins should be able to edit scientific data; normal users should not.
+ 
+ API secrets: Keep keys and database credentials in environment variables, never in frontend code.
+ 
+ Input validation: Reject impossible values and inconsistent units.
+ 
+ Audit trail: Record important database changes, especially scientific-property updates.
+ 
+ Dataset licensing: Verify that every external dataset can legally be reused for the intended prototype.
+ 
+ Copyright: Do not scrape and republish copyrighted tables/images without permission.
+ 
+ Scientific claims: Never present an unvalidated prediction as a guaranteed shelf life or food-safety certification.
+ 
+ Privacy: The core problem does not require sensitive identity information such as Aadhaar or biometrics.
+ 
+15. MVP — What We Should Actually Build
+The MVP should prove the core value in a short live demonstration. It is better to support a limited number of food
+categories and packaging materials with high-quality, traceable data than to claim universal coverage with weak data.
+MVP Features
+ Food-property input form.
+ 
+ Storage-condition input form.
+ 
+ Curated packaging-material/structure database.
+ 
+ Scientific requirement engine.
+ 
+ AI/ML-assisted ranking if validated.
+ 
+ Top 3 packaging recommendations.
+ 
+ OTR/WVTR/thickness and other available specifications.
+ 
+ Why-this-was-recommended explanation.
+ 
+ Source/provenance and confidence/evidence indicator.
+ 
+ At least one fresh-produce workflow that considers respiration.
+ 
+Do NOT build initially
+ A full mobile app and web app simultaneously.
+ 
+ Blockchain.
+ 
+ A huge chatbot.
+ 
+ A supplier marketplace.
+ 
+ Complex IoT hardware.
+ 
+=== PAGE 9 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 9
+ Nationwide government-scale deployment.
+ 
+ Hundreds/thousands of poorly validated packaging materials.
+ 
+16. Advanced Features
+Priority 1 — High impact + realistic
+ Cost-aware optimization.
+ 
+ Sustainability/recyclability comparison.
+ 
+ Better top-3 recommendation ranking.
+ 
+ Confidence and evidence scoring.
+ 
+ Multilayer packaging structure representation.
+ 
+Priority 2 — Useful but optional
+ Shelf-life prediction using validated data.
+ 
+ MAP optimization.
+ 
+ Downloadable technical reports.
+ 
+ Admin analytics.
+ 
+Priority 3 — Extra time only
+ QR traceability.
+ 
+ Supplier integration.
+ 
+ Large-scale recommendation marketplace.
+ 
+ Advanced industrial integrations.
+ 
+17. Accuracy and Reliability
+The weakest dependency is the scientific data layer. OTR and WVTR values are not universal constants for a
+material name; they can depend on thickness, temperature, relative humidity, composition, processing and test
+method. Therefore, a number without its measurement context can lead to a misleading recommendation.
+Risk reduction strategy
+ Store value + unit + thickness + temperature + RH + test method + source.
+ 
+ Normalize units before comparing records.
+ 
+ Do not merge incompatible measurements blindly.
+ 
+ Use source quality and evidence level.
+ 
+ Show ranges where appropriate instead of false precision.
+ 
+ If required information is missing, reduce confidence or exclude the candidate.
+ 
+ Keep a rule-based fallback if the ML model cannot produce a trustworthy result.
+ 
+18. Failure Scenarios
+Failure
+Impact
+Prevention
+Fallback
+Missing food data
+Recommendation quality decreases.
+Validate required fields.
+Ask user for missing data or provide limited-confidence result.
+Wrong units
+Material ranking can become wrong.
+Normalize units and validate ranges.
+Reject/flag the record.
+
+=== PAGE 10 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 10
+Failure
+Impact
+Prevention
+Fallback
+Conflicting scientific values
+One material may appear artificially better/worse.
+Store source and test conditions.
+Use ranges and show uncertainty.
+Packaging property missing
+Candidate cannot be compared reliably.
+Track data completeness.
+Exclude or label as insufficient evidence.
+ML model performs poorly
+Wrong recommendations.
+Compare against rule-based baseline.
+Fallback to validated rules.
+Database failure
+Application unavailable.
+Backups and health checks.
+Cached read-only material data.
+Server overload
+Slow or failed requests.
+Rate limiting and caching.
+Queue/retry or temporary read-only mode.
+Internet failure
+Cloud services may become inaccessible.
+Minimize external dependencies.
+Local/cached demo dataset.
+Unknown respiration rate
+Fresh-produce recommendation may be weak.
+Collect or estimate only from validated sources.
+Show uncertainty / request data.
+Unvalidated shelf-life prediction
+User may over-trust the number.
+Validate model and communicate limits.
+Do not show a precise prediction until validated.
+Dataset licensing problem
+Legal/reuse issue.
+Record licenses and sources.
+Remove restricted data.
+Outdated material data
+Recommendation may not reflect current products.
+Version and review database.
+Flag data age and update periodically.
+19. Recommended Technology Stack
+Layer
+Recommended
+Why
+Frontend
+React + TypeScript
+Fast UI development and good support for forms, dashboards and charts.
+UI
+Tailwind CSS
+Quick, consistent interface development.
+Backend
+Python + FastAPI
+Python works well for scientific data/ML; FastAPI provides a clean API layer.
+Database
+PostgreSQL
+Structured relational data and strong integrity.
+AI/ML
+scikit-learn initially
+Suitable for tabular data and simpler models.
+Data
+pandas + NumPy
+Cleaning, transformation and analysis.
+Charts
+Recharts/Plotly
+Material-property and recommendation visualizations.
+Hosting
+Free-tier cloud initially
+Enough for SIH demonstration.
+Version control
+Git + GitHub
+Collaboration and version history.
+Alternative: Flutter + FastAPI + PostgreSQL if a mobile application becomes a priority. For the SIH prototype, a
+responsive web application is the safer starting point.
+Cost strategy
+ Core open-source technologies can be used at no software-license cost.
+ 
+ Free-tier hosting/database services may be enough for the prototype.
+ 
+ External AI APIs are not required for the core recommendation engine.
+ 
+ Avoid paid APIs unless a real requirement appears.
+ 
+ A near-zero-cost MVP is realistic if the team uses open-source software and carefully selected reusable data.
+ 
+20. Research Plan Before Coding
+Food Packaging Fundamentals
+ What to research: OTR, WVTR, permeability, sealability, mechanical strength, barrier properties and MAP.
+ 
+ Where: Peer-reviewed papers, textbooks, standards, authoritative technical documents.
+ 
+ Reliability check: You can define every term and explain why it affects packaging selection.
+ 
+Food Requirements
+ What to research: Moisture sensitivity, oxygen sensitivity, fat/oxidation, pH, respiration and storage conditions for
+ selected foods.
+
+=== PAGE 11 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 11
+ Where: Peer-reviewed food science/post-harvest literature.
+ 
+ Reliability check: Values are traceable and not copied from random blogs.
+ 
+Packaging Materials
+ What to research: LDPE, HDPE, PP, PET, BOPP, metallized films, foil laminates, EVOH structures, PLA,
+ breathable/micro-perforated films.
+ Where: Scientific literature and manufacturer technical datasheets where reuse is permitted.
+ 
+ Reliability check: Each property has source and measurement conditions.
+ 
+Dataset Construction
+ What to research: Collect, clean, normalize and link material properties with sources.
+ 
+ Where: TRANSMAT, scientific literature and legally reusable datasets.
+ 
+ Reliability check: Units and conditions are consistent and provenance is stored.
+ 
+MAP
+ What to research: Food-specific gas requirements and interaction with respiration/permeability.
+ 
+ Where: Food-packaging research literature.
+ 
+ Reliability check: No universal gas mixture is assumed.
+ 
+ML
+ What to research: Compare rules against ML ranking/prediction.
+ 
+ Where: Your curated dataset plus validated references.
+ 
+ Reliability check: ML improves or complements the baseline instead of being used just for appearance.
+ 
+Validation
+ What to research: Create test cases and expert/reference comparisons.
+ 
+ Where: Known food-packaging examples and documented sources.
+ 
+ Reliability check: Recommendations can be defended during judging.
+ 
+21. Team Division (5 Members)
+Member
+Role
+Main Responsibilities
+1
+Frontend
+React UI, forms, result dashboard, charts, responsive design.
+2
+Backend
+FastAPI, validation, API endpoints, authentication and database integration.
+3
+Data + Research
+Scientific sources, datasets, cleaning, units, provenance and food-property research.
+4
+AI/ML
+Rule engine, ML baseline, ranking model, evaluation and explainability.
+5
+Integration + QA + Pitch
+Integration, testing, failure cases, documentation, PPT, demo and judge preparation.
+Key dependency: Data/Research → AI/ML → Backend → Frontend → Integration. Frontend can still work in parallel
+with mock data.
+22. SIH Judging Perspective
+What would impress judges?
+ A working end-to-end recommendation demo.
+ 
+=== PAGE 12 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 12
+ Scientific explanation of why the recommendation was produced.
+ 
+ Traceable data sources instead of invented numbers.
+ 
+ Top-3 alternatives with cost/sustainability trade-offs.
+ 
+ A fresh-produce workflow that correctly considers respiration and controlled gas exchange.
+ 
+ A clear comparison of the rule-based baseline and ML-enhanced ranking.
+ 
+ Honest uncertainty handling.
+ 
+Difficult questions judges may ask
+Q: Why do you need AI?
+A: We use scientific rules for known constraints and ML for ranking complex combinations when validated data is
+available. We compare ML against the rule-based baseline rather than assuming AI is automatically better.
+Q: Where did your packaging data come from?
+A: We use traceable scientific datasets and literature, store measurement conditions and source information, and
+verify licensing before reuse.
+Q: Can you guarantee shelf life?
+A: No. The system is decision support. Final shelf-life and food-safety validation requires controlled testing.
+Q: Why not just recommend the cheapest material?
+A: Technical suitability comes first. Cost is an optimization factor after required packaging constraints are satisfied.
+Q: Why not use deep learning?
+A: The core data is structured/tabular scientific data. A simpler interpretable model can be more suitable when data is
+limited. We use deep learning only if the evidence shows it is beneficial.
+Q: What happens when data is missing?
+A: The system reduces confidence, asks for additional input, excludes unsupported candidates, or falls back to
+validated rules.
+23. RED FLAGS
+ Fake AI: Hardcoded food-to-material mappings presented as machine learning.
+ 
+ Random Kaggle data: Generic food-image or expiry datasets do not automatically solve a packaging-property
+ recommendation problem.
+ Invented OTR/WVTR numbers: Never create scientific values to fill missing rows.
+ 
+ Ignoring measurement conditions: Material property values must retain context such as thickness, temperature
+ and RH where relevant.
+ Material name treated as a complete solution: Real packaging can be multilayer; structure matters.
+ 
+ Universal MAP composition: Gas requirements are food- and condition-dependent.
+ 
+ Guaranteed shelf life: Avoid unsupported guarantees.
+ 
+ No source provenance: Every important scientific value should be traceable.
+ 
+ Overengineering: Blockchain, IoT, marketplace and chatbot features can distract from the core problem.
+ 
+ False confidence: If the evidence is weak, the system should communicate uncertainty.
+ 
+24. What We Need to Collect Before Coding
+ ■ Finalize 8–15 initial food/commodity categories.
+ 
+ ■ Finalize the first set of packaging materials/structures.
+ 
+=== PAGE 13 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 13
+ ■ Collect reliable food-property data.
+ 
+ ■ Collect packaging-property data with units and test conditions.
+ 
+ ■ Verify dataset/source licenses.
+ 
+ ■ Create the master packaging dataset.
+ 
+ ■ Design the PostgreSQL schema.
+ 
+ ■ Define the requirement/scoring rules.
+ 
+ ■ Create a rule-based baseline.
+ 
+ ■ Decide whether the available data supports ML.
+ 
+ ■ Define evaluation metrics and test cases.
+ 
+ ■ Finalize UI/user flow.
+ 
+ ■ Build API contract between frontend and backend.
+ 
+ ■ Prepare demo scenarios.
+ 
+ ■ Prepare failure/fallback handling.
+ 
+25. Final Blueprint
+Item
+Final Direction
+Problem
+Food stakeholders need help selecting packaging that matches food properties, storage conditions and shelf-life requirements.
+Users
+Small food industries, startups, farmers/FPOs, researchers, packaging professionals and administrators.
+Solution
+AI-assisted decision-support application that converts food/storage inputs into packaging requirements and ranks suitable materials/structures.
+Core Features
+Input → requirement analysis → material matching → AI ranking → specifications → explanation → alternatives.
+APIs
+Mainly our own FastAPI; external APIs are optional and not central to the MVP.
+Data
+Curated food-property and packaging-property data with source, unit, thickness and measurement conditions.
+AI/ML
+Recommended as a hybrid rules + ML ranking approach; do not force deep learning.
+Database
+PostgreSQL.
+Frontend
+React + TypeScript.
+Backend
+Python + FastAPI.
+AI
+scikit-learn initially; more advanced models only after dataset validation.
+Cloud
+Free-tier hosting for the SIH prototype.
+MVP
+Web app that recommends and explains packaging for selected foods using a traceable packaging database.
+Future Scope
+Shelf-life prediction, cost/sustainability optimization, multilayer design, MAP optimization, QR traceability and industry integrations.
+Biggest Risk
+Reliable, standardized and legally reusable scientific data.
+Best Mitigation
+Build a source-traceable master packaging knowledge base and preserve measurement conditions for every important property.
+One-sentence definition
+Build a smart packaging advisor that takes food properties and storage conditions as input and returns
+scientifically justified, ranked packaging material/structure recommendations with the required
+packaging specifications and clear reasoning.
+
+=== PAGE 14 ===
+SIH 2026 — Intelligent Food Packaging Recommendation System
+Page 14
+26. Recommended Development Order
+Do not start by training an ML model. The correct order is to first understand the domain, collect and clean the
+scientific data, create a rule-based baseline, and only then add ML if it demonstrably improves the recommendation.
+ Step 1 — Finalize food categories.
+ 
+ Step 2 — Finalize packaging material/structure categories.
+ 
+ Step 3 — Research food-property requirements.
+ 
+ Step 4 — Collect packaging-property data.
+ 
+ Step 5 — Standardize units and measurement conditions.
+ 
+ Step 6 — Build the master dataset and source table.
+ 
+ Step 7 — Implement scientific requirement rules.
+ 
+ Step 8 — Build a baseline recommendation engine.
+ 
+ Step 9 — Train/test ML ranking if the data supports it.
+ 
+ Step 10 — Build FastAPI backend.
+ 
+ Step 11 — Build React frontend.
+ 
+ Step 12 — Integrate and test.
+ 
+ Step 13 — Prepare 3–5 strong demo scenarios.
+ 
+ Step 14 — Validate claims and prepare SIH pitch/judge answers.
+ 

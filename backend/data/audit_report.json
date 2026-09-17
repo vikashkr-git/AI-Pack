@@ -1,0 +1,284 @@
+{
+  "dataset_metadata": {
+    "source_file": "Food_Packaging_Dataset_5000.csv",
+    "total_rows": 5000,
+    "total_columns": 18,
+    "columns": [
+      "Food_ID",
+      "Commodity",
+      "Category",
+      "Moisture_pct",
+      "Fat_pct",
+      "Protein_pct",
+      "pH",
+      "Respiration_Rate",
+      "Shelf_Life_Days",
+      "Storage_Temperature_C",
+      "Relative_Humidity_pct",
+      "Storage_Type",
+      "Transportation",
+      "Recommended_Packaging",
+      "Film_Thickness_um",
+      "OTR_Class",
+      "WVTR_Class",
+      "MAP_Suitable"
+    ],
+    "null_counts": {
+      "Food_ID": 0,
+      "Commodity": 0,
+      "Category": 0,
+      "Moisture_pct": 0,
+      "Fat_pct": 0,
+      "Protein_pct": 0,
+      "pH": 0,
+      "Respiration_Rate": 0,
+      "Shelf_Life_Days": 0,
+      "Storage_Temperature_C": 0,
+      "Relative_Humidity_pct": 0,
+      "Storage_Type": 0,
+      "Transportation": 0,
+      "Recommended_Packaging": 0,
+      "Film_Thickness_um": 0,
+      "OTR_Class": 0,
+      "WVTR_Class": 0,
+      "MAP_Suitable": 0
+    },
+    "is_synthetic_gemini": true
+  },
+  "target_leakage_audit": {
+    "finding": "CRITICAL: Commodity to Recommended_Packaging is 100% deterministic",
+    "is_deterministic": true,
+    "leakage_by_commodity": {
+      "Apple": {
+        "mapped_packaging": "Micro_Perforated_PE",
+        "count": 246,
+        "percentage": 100.0
+      },
+      "Biscuits": {
+        "mapped_packaging": "BOPP_PE",
+        "count": 258,
+        "percentage": 100.0
+      },
+      "Bread": {
+        "mapped_packaging": "LDPE_Bag",
+        "count": 238,
+        "percentage": 100.0
+      },
+      "Butter": {
+        "mapped_packaging": "Aluminum_Foil_Laminate",
+        "count": 240,
+        "percentage": 100.0
+      },
+      "Carrot": {
+        "mapped_packaging": "Micro_Perforated_PE",
+        "count": 267,
+        "percentage": 100.0
+      },
+      "Cheese": {
+        "mapped_packaging": "PA_PE_Vacuum",
+        "count": 246,
+        "percentage": 100.0
+      },
+      "Coffee Powder": {
+        "mapped_packaging": "Metallized_PET_PE",
+        "count": 242,
+        "percentage": 100.0
+      },
+      "Fish": {
+        "mapped_packaging": "PA_PE_Vacuum",
+        "count": 243,
+        "percentage": 100.0
+      },
+      "Fresh Chicken": {
+        "mapped_packaging": "PA_PE_Vacuum",
+        "count": 234,
+        "percentage": 100.0
+      },
+      "Frozen Peas": {
+        "mapped_packaging": "PE_Film",
+        "count": 246,
+        "percentage": 100.0
+      },
+      "Ground Coffee": {
+        "mapped_packaging": "High_Barrier_Laminate",
+        "count": 263,
+        "percentage": 100.0
+      },
+      "Mango": {
+        "mapped_packaging": "Breathable_PE",
+        "count": 230,
+        "percentage": 100.0
+      },
+      "Milk Powder": {
+        "mapped_packaging": "Aluminum_Laminate",
+        "count": 258,
+        "percentage": 100.0
+      },
+      "Onion": {
+        "mapped_packaging": "Breathable_PP",
+        "count": 261,
+        "percentage": 100.0
+      },
+      "Peanuts": {
+        "mapped_packaging": "Metallized_PET_PE",
+        "count": 251,
+        "percentage": 100.0
+      },
+      "Potato Chips": {
+        "mapped_packaging": "Metallized_PET_PE",
+        "count": 285,
+        "percentage": 100.0
+      },
+      "Rice": {
+        "mapped_packaging": "HDPE",
+        "count": 237,
+        "percentage": 100.0
+      },
+      "Tomato": {
+        "mapped_packaging": "Micro_Perforated_PE",
+        "count": 272,
+        "percentage": 100.0
+      },
+      "Wheat Flour": {
+        "mapped_packaging": "HDPE",
+        "count": 253,
+        "percentage": 100.0
+      },
+      "Yogurt": {
+        "mapped_packaging": "PP_Cup_Foil_Lid",
+        "count": 230,
+        "percentage": 100.0
+      }
+    },
+    "architectural_remedy": "Formulate ML problem as Suitability Scoring [Food + Environment + Packaging -> Score] rather than Commodity -> Packaging classification."
+  },
+  "anomalies_detected": {
+    "total_anomalies_flagged": 21,
+    "moisture_gt_100_count": 1,
+    "proximate_sum_gt_100_count": 434,
+    "frozen_temp_mismatches": 0,
+    "ambient_temp_mismatches": 0,
+    "chilled_temp_mismatches": 0,
+    "sample_anomalies": [
+      {
+        "food_id": "F00003",
+        "commodity": "Tomato",
+        "type": "MOISTURE_EXCEEDS_100",
+        "details": "Moisture 101.08% exceeds 100%",
+        "severity": "CRITICAL"
+      },
+      {
+        "food_id": "F00003",
+        "commodity": "Tomato",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(101.08) + Fat(0.24) + Protein(0.91) = 102.23% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00006",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(72.83) + Fat(8.02) + Protein(21.96) = 102.81% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00020",
+        "commodity": "Fish",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(76.6) + Fat(5.27) + Protein(20.34) = 102.21% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00026",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(72.81) + Fat(8.43) + Protein(22.54) = 103.78% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00038",
+        "commodity": "Butter",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(15.79) + Fat(83.31) + Protein(0.98) = 100.08% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00040",
+        "commodity": "Fish",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(75.46) + Fat(4.92) + Protein(19.72) = 100.10% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00046",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(73.34) + Fat(8.35) + Protein(23.48) = 105.17% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00058",
+        "commodity": "Butter",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(16.63) + Fat(82.35) + Protein(1.21) = 100.19% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00078",
+        "commodity": "Butter",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(15.9) + Fat(84.65) + Protein(0.73) = 101.28% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00086",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(71.24) + Fat(7.84) + Protein(23.63) = 102.71% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00100",
+        "commodity": "Fish",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(77.19) + Fat(5.24) + Protein(19.06) = 101.49% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00106",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(73.06) + Fat(8.27) + Protein(23.57) = 104.90% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00120",
+        "commodity": "Fish",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(77.37) + Fat(5.08) + Protein(19.8) = 102.25% > 100%",
+        "severity": "WARNING"
+      },
+      {
+        "food_id": "F00126",
+        "commodity": "Fresh Chicken",
+        "type": "PROXIMATE_SUM_EXCEEDS_100",
+        "details": "Moisture(72.58) + Fat(7.93) + Protein(21.86) = 102.37% > 100%",
+        "severity": "WARNING"
+      }
+    ]
+  },
+  "transformations_applied": [
+    {
+      "target_column": "Moisture_pct",
+      "condition": "Moisture_pct > 100%",
+      "action": "Capped to 94.5% (USDA FoodData Central standard tomato reference). Raw value preserved in raw_moisture_pct.",
+      "rows_affected": 1
+    },
+    {
+      "target_column": "is_flagged",
+      "condition": "Any physical inconsistency detected",
+      "action": "Added boolean audit flag and explanatory text column flag_reason.",
+      "rows_affected": 434
+    }
+  ]
+}

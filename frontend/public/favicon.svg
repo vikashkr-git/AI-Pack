@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="pouchGrad" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd905" />
+      <stop offset="50%" stop-color="#ff9900" />
+      <stop offset="100%" stop-color="#ff64d5" />
+    </linearGradient>
+    <linearGradient id="filmLayer" x1="18" y1="20" x2="46" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#ffd905" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Outer Protective Barrier Pouch Silhouette -->
+  <path d="M16 12C16 10.3431 17.3431 9 19 9H45C46.6569 9 48 10.3431 48 12L51 46C51.2 48.5 49.5 52 46 54C42 56.5 22 56.5 18 54C14.5 52 12.8 48.5 13 46L16 12Z" 
+        fill="url(#pouchGrad)" 
+        stroke="#ffffff" 
+        stroke-width="2.5" 
+        stroke-linejoin="round"
+        filter="url(#glow)" />
+
+  <!-- Heat Seal Top Crimp Lines -->
+  <line x1="17" y1="14" x2="47" y2="14" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="2 2" stroke-linecap="round" />
+  <line x1="17" y1="18" x2="47" y2="18" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round" />
+
+  <!-- Tear Notch -->
+  <path d="M15.5 16L13 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  <path d="M48.5 16L51 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Multilayer Co-extruded Barrier Core (EVOH / Metallized / Bio Core) -->
+  <path d="M22 25C22 23.8954 22.8954 23 24 23H40C41.1046 23 42 23.8954 42 25V42C42 45 38 48 32 48C26 48 22 45 22 42V25Z" 
+        fill="#090e1a" 
+        stroke="url(#filmLayer)" 
+        stroke-width="2.2" />
+
+  <!-- Multilayer Film Gauge Ribbons / Leaf of freshness inside -->
+  <path d="M32 28C32 28 37 31 37 36C37 39 34.5 41 32 42C29.5 41 27 39 27 36C27 31 32 28 32 28Z" 
+        fill="url(#filmLayer)" />
+
+  <!-- Central Freshness Vein / Stem -->
+  <path d="M32 30V40" stroke="#090e1a" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Golden Quality Star -->
+  <path d="M43 28L44.2 30.5L47 31L45 33L45.5 36L43 34.5L40.5 36L41 33L39 31L41.8 30.5L43 28Z" 
+        fill="#ffd905" 
+        stroke="#ffffff" 
+        stroke-width="0.8" />
+</svg>

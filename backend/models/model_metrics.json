@@ -1,0 +1,65 @@
+{
+  "model_version": "v1.0-rf-grouped",
+  "timestamp": "2026-09-13T23:58:38.877092",
+  "evaluation_strategy": "5-Fold GroupKFold (Grouped by Commodity to prevent target leakage)",
+  "model_comparisons": {
+    "RandomForest": {
+      "mean_mae": 0.722,
+      "mean_rmse": 2.144,
+      "mean_r2": 0.997,
+      "mean_top1_accuracy": 5.0,
+      "mean_top3_accuracy": 10.0,
+      "mean_ndcg_at_3": 0.3863
+    },
+    "GradientBoosting": {
+      "mean_mae": 0.876,
+      "mean_rmse": 2.554,
+      "mean_r2": 0.996,
+      "mean_top1_accuracy": 0.0,
+      "mean_top3_accuracy": 5.0,
+      "mean_ndcg_at_3": 0.5078
+    }
+  },
+  "final_model_metrics": {
+    "mean_mae": 0.722,
+    "mean_rmse": 2.144,
+    "mean_r2": 0.997,
+    "mean_top1_accuracy": 5.0,
+    "mean_top3_accuracy": 10.0,
+    "mean_ndcg_at_3": 0.3863
+  },
+  "feature_importances": {
+    "produce_breathability_match": 0.5342,
+    "temp_safety_margin": 0.3031,
+    "log_wvtr": 0.122,
+    "log_otr_delta": 0.0359,
+    "bio_based_pct": 0.0014,
+    "puncture_margin": 0.0008,
+    "log_wvtr_delta": 0.0006,
+    "moisture_pct": 0.0004,
+    "shelf_life_days": 0.0004,
+    "is_long_distance": 0.0003,
+    "recycled_content_pct": 0.0002,
+    "fat_pct": 0.0001,
+    "ph": 0.0001,
+    "storage_temp_c": 0.0001,
+    "puncture_resistance_n": 0.0001,
+    "oxidation_risk_index": 0.0001,
+    "protein_pct": 0.0,
+    "respiration_rate": 0.0,
+    "relative_humidity_pct": 0.0,
+    "is_frozen": 0.0,
+    "is_chilled": 0.0,
+    "is_ambient": 0.0,
+    "log_otr": 0.0,
+    "film_thickness_um": 0.0,
+    "min_temperature_c": 0.0,
+    "pkg_breathable": 0.0,
+    "pkg_micro_perforated": 0.0,
+    "pkg_map_suitable": 0.0,
+    "cost_index_relative": 0.0,
+    "vapor_pressure_delta_kpa": 0.0
+  },
+  "total_training_samples": 18000,
+  "total_features": 30
+}
