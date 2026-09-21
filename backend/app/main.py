@@ -7,7 +7,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from backend.app.api.api_router import api_router
+from app.api.api_router import api_router
 
 app = FastAPI(
     title="PackAI - Intelligent Food Packaging Material Recommendation API",
