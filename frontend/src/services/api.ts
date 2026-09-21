@@ -7,11 +7,11 @@ import {
   FoodInputFormState
 } from '../types';
 
-const API_BASE = '/api/v1';
+const API_BASE = 'https://ai-pack-c7vn.onrender.com/api/v1';
 
 export async function fetchHealth(): Promise<{ status: string }> {
   try {
-    const res = await fetch('/health');
+    const res = await fetch('https://ai-pack-c7vn.onrender.com/health');
     if (!res.ok) throw new Error('Health check failed');
     return await res.json();
   } catch (err) {
